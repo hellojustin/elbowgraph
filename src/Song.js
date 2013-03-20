@@ -8,4 +8,6 @@ define( [], function() {
     throw new Error("not yet implemented");
   };
 
+  return Song;
+
 });

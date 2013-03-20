@@ -2,7 +2,7 @@ define(
   [ 'SpecHelper',
     '../src/Player',
     '../src/Song' ],
-  function() {
+  function( SpecHelper, Player, Song ) {
 
     describe("Player", function() {
     var player;
