@@ -1,6 +1,6 @@
 define(
 
-  [ '../src/PlotPoint',
+  [ '../../src/plotting/PlotPoint',
     'SpecHelper' ],
 
   function( PlotPoint ) {
