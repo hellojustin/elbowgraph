@@ -12,7 +12,7 @@ define(
   /* The SpecRunner module depends on each of our Jasmine spec modules, so we 
      need to list each of them here. */
 
-  [ 'CoordinateSpec' ], 
+  [ 'PlotPointSpec' ], 
 
   /* Here we begin our definition of the SpecRunner module. */
 

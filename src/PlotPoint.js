@@ -36,7 +36,7 @@ define(
 
     }
 
-    /* Export the plotPoint module as the PlotPoint constructor function. */
+    /* Export the coordinate module as the PlotPoint constructor function. */
     return PlotPoint;
 
   }
