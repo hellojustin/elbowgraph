@@ -8,6 +8,8 @@ define(
     describe( 'PlotPoint', function() {
 
       describe( 'when instantiated with no parameters',  function() {
+
+        var plotPoint;
         
         beforeEach( function() {
           plotPoint = new PlotPoint();
@@ -53,7 +55,6 @@ define(
 
         it( 'should not return the X value directly', function() {
           expect( plotPoint.x ).toBeUndefined();
-          expect( plotPoint._x ).toBeUndefined();
         } );
 
         it( 'should return the proper X value via an accessor', function() {
@@ -62,7 +63,6 @@ define(
 
         it( 'should not return the Y value directly', function() {
           expect( plotPoint.y ).toBeUndefined();
-          expect( plotPoint._y ).toBeUndefined();
         } );
 
         it( 'should return the proper Y value via an accessor', function() {

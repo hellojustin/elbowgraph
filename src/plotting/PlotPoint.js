@@ -4,14 +4,11 @@ define(
 
   function() {
 
-    var _x = 0,
-        _y = 0;
-    
     /* Defining the PlotPoint function that will construct instances of 
        PlotPoint */
-    PlotPoint = function( xValue, yValue ) {
-      _x = xValue || 0;
-      _y = yValue || 0;
+    function PlotPoint( xValue, yValue ) {
+      this._x = xValue || 0;
+      this._y = yValue || 0;
     }
 
     /* Defining the PlorPoint prototype. These are functions and attributes 
@@ -19,19 +16,19 @@ define(
     PlotPoint.prototype = {
 
       getX : function() {
-        return _x;
+        return this._x;
       },
 
       getY : function() {
-        return _y;
+        return this._y;
       },
 
       toArray : function() {
-        return [ _x, _y ];
+        return [ this.getX(), this.getY() ];
       },
 
       toString : function() {
-        return _x.toString() + ',' + _y.toString();
+        return this.getX().toString() + ',' + this.getY().toString();
       }
 
     }
