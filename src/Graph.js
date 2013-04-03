@@ -1,27 +1,21 @@
 define(
 
-  [],
+  [ '../src/data/DataSeries',
+    'raphael' ],
 
-  function() {
+  function( DataSeries, Raphael ) {
 
-    function AbstractGraphManager( jQueryDomElement ) {
-      if ( jQueryDomElement === undefined ) {
-        throw new Error( "Expected jQueryDomElement to be passed as parameter " +
-                         "to AbstractGraphManager." );
-      }
-
-      this._containerElement = jQueryDomElement;
+    function Graph( jQueryDomElement, data ) {
+      this._paper          = Raphael( jQueryDomElement );
+      this._dataSeriesList = [];
     }
 
-    AbstractGraphManager.prototype = {
-
-      getContainerElement : function() {
-        return this._containerElement;
-      }
-
+    Graph.prototype.addDataSeries = function( data ) {
+      this._dataSeriesList.push( new DataSeries( data ) );
+      return this;
     }
 
-    return AbstractGraphManager;
+    return Graph;
 
   }
 

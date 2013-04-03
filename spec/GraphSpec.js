@@ -1,46 +1,35 @@
 define(
 
-  [ '../src/AbstractGraphManager',
+  [ '../src/Graph',
     'SpecHelper' ],
 
-  function( AbstractGraphManager ) {
+  function( Graph ) {
 
-    describe( 'AbstractGraphManager', function() {
+    describe( 'Graph', function() {
 
-      describe( 'when constructed without any parameters', function() {
-
-        it( 'should throw an exception.', function() {
-          expect( function() { new AbstractGraphManager(); } )
-            .toThrow( new Error( "Expected jQueryDomElement to be passed as " +
-                                 "parameter to AbstractGraphManager." ) );
-        } );
-
-      } );
-
-      describe( 'when constructed with a jQueryDomElement as a container elem',
+      describe( 'when constructed with jQueryDomElement and data parameters',
         function() {
 
-          var domSnippet,
-              abstractGraphManager;
+        var domSnippet,
+            data,
+            graph;
 
-          beforeEach( function() {
-            domSnippet = $( '<div></div>' );
-            abstractGraphManager = new AbstractGraphManager( domSnippet );
-          } );
+        beforeEach( function() {
+          domSnippet = $( 'body' );
+          data       = [ [1,1], [2,2] [3,3] ]
+          graph      = new Graph( domSnippet, data );
+        } );
 
-          it( 'should create an instance of AbstractGraphManager', function() {
-            expect( abstractGraphManager ).toBeDefined();
-            expect( typeof abstractGraphManager ).toEqual( 'object' );
-          } );
+        it( 'should create an instance of Graph', function() {
+          expect( graph                  ).toBeDefined();
+          expect( typeof graph           ).toEqual( 'object' );
+          expect( graph instanceof Graph ).toBeTruthy();
+        } );
 
-          it( 'should not expose the container element directy', function() {
-            expect( abstractGraphManager.containerElement ).toBeUndefined();
-          } );
-
-          it( 'should expose the container element via an accessor', function(){
-            expect( abstractGraphManager.getContainerElement() )
-              .toEqual( domSnippet );
-          } );
+        it( 'should not expose the paper attribute directy', function() {
+          expect( graph.paper    ).toBeUndefined();
+          expect( graph.getPaper ).toBeUndefined();
+        } );
 
       } );
 

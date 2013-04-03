@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>ElbowGraph :: Line Graph Example</title>
+    <script type='text/javascript' src='../lib/jquery-1.9.1/jquery-1.9.1.js'></script>
+    <script type='text/javascript' src='../lib/raphaeljs/raphael.js'></script>
+  </head>
+
+  <body>
+    <h3>ElbowGraph :: Line Graph Example</h3>
+    <div id='lineGraph'></div>
+
+    <script type='text/javascript'>
+      var data = [ [  10, 10 ], [ 180,195 ], [ 200,200 ], [ 250,210 ],
+                   [ 385,115 ], [ 420,300 ], [ 600, 70 ], [ 700,200 ], 
+                   [ 800, 20 ] ];
+
+      new LineGraph( $( '#lineGraph' ), data ).render();
+    </script>
+
+  </body>
+
+</html>
